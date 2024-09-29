@@ -7,7 +7,7 @@ const int maxn = 505;
 struct X {
     int t, f;
 } s[maxn];
-
+//按罚款金额从大到小排列，每次优先占用自己的截止期限时间点，被使用后向前占用
 bool cmp(X a, X b) {
     return a.f > b.f;
 }
