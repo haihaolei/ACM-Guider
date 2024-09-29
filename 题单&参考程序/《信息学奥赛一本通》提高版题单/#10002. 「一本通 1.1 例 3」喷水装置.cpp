@@ -4,7 +4,7 @@
 #include <algorithm>
 using namespace std;
 const int maxn = 15005;
-
+//贪心：排序后，每次取符合条件的左侧（当前数据v，取后面的数据中v1.left <= v.right 的数据）中数据中最大的右侧
 struct C {
     double l, r;
 } s[maxn];
@@ -14,6 +14,7 @@ double L, w, x, r;
 
 bool cmp(C a, C b) {
     if (a.l == b.l)
+        //左侧从小到大，左侧相同时右侧从大到小
         return a.r > b.r;
 
     return a.l < b.l;
@@ -35,7 +36,7 @@ signed main() {
             if (r * 2 <= w)
                 continue;
 
-            s[++cnt].l = x - sqrt(r * r - w * w / 4);
+            s[++cnt].l = x - sqrt(r * r - w * w / 4); //计算有效覆盖范围，勾股定理
             s[cnt].r = x + sqrt(r * r - w * w / 4);
         }
 
