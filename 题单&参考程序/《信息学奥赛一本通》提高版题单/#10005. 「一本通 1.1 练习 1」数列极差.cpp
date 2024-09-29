@@ -4,7 +4,7 @@
 using namespace std;
 const int N = 2e5 + 7;
 const int mod = 1e9 + 7;
-
+// 由小到大乘得最大值，从大到小乘得最小值。使用优先级队列实现（堆）
 //int read(){   int x=0,f=1;char ch=getchar();while(ch<'0'||ch>'9'){if(ch=='-') f=f*-1;ch=getchar();}while(ch>='0'&&ch<='9'){x=x*10+ch-'0';ch=getchar();}return x*f;}
 
 int n, a[N];
@@ -30,7 +30,6 @@ signed main() {
         int b = q1.top();
         q1.pop();
         q1.push(a * b + 1);
- #10006. 「一本通 1.1 练    }
 
     while (q2.size() > 1) {
         int a = q2.top();
