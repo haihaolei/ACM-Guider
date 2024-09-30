@@ -30,7 +30,7 @@ inline void read(int &data) {
 
 int n, m, a[maxn];
 
-bool check(int x) {
+bool check(int x) { //最多能放几头，大于m时则满足
     int num = 1, now = a[1], idx = 1;
 
     for (int i = 2; i <= n; i++) {
@@ -55,7 +55,7 @@ signed main() {
     int l = 0, r = 1e9 + 7, mid;
 
     while (r - l > 1) {
-        mid = l + r >> 1;
+        mid = l + r >> 1;  //对结果二分查找，再判断二分得到的值是否满足，满足找右半边，不满足左半边
 
         if (check(mid))
             l = mid;
